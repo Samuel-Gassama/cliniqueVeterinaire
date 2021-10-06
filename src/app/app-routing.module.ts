@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'ajout-client',
+    loadChildren: () => import('./modal/ajout-client/ajout-client.module').then( m => m.AjoutClientPageModule)
+  },
+  {
+    path: 'intervention',
+    loadChildren: () => import('./Intervention/intervention/intervention.module').then( m => m.InterventionPageModule)
+  },
+  {
+    path: 'detail-client',
+    loadChildren: () => import('./detail-client/detail-client.module').then( m => m.DetailClientPageModule)
+  },
 ];
 
 @NgModule({

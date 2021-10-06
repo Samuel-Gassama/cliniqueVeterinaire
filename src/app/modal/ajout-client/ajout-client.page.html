@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ajoutClient</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+  <ion-content>
+    <ion-card>
+      <ion-item>
+        <ion-label>Nom :</ion-label>
+        <ion-input type="text" [(ngModel)]="nouveauClient.nom" ngDefaultControl></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Prenom :</ion-label>
+        <ion-input type="text" [(ngModel)]="nouveauClient.prenom" ngDefaultControl></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Téléphone :</ion-label>
+        <ion-input type="text" [(ngModel)]="nouveauClient.telephone" ngDefaultControl></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-button (click)='enregistrerClient()'>Enregistrer</ion-button>
+        <ion-button (click)='annulerClient()'>Annuler</ion-button>
+      </ion-item>
+    </ion-card> 
+  </ion-content>
+
