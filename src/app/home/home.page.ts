@@ -11,13 +11,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomePage implements OnInit {
 
-  @Input() public nom : string;
-  @Input() public prenom : string;
-  @Input() public telephone: string;
+  // @Input() public nom : string;
+  // @Input() public prenom : string;
+  // @Input() public telephone: string;
 
   listeClients : any;
   modal : any;
-  apiClient : string ="http://localhost/apiGestionClients.php"
+  apiClient : string ="http://localhost/api/apiGestionClients.php"
 
   constructor( private httpClient: HttpClient, public ClientService:ClientService, private routeur:Router) {
 

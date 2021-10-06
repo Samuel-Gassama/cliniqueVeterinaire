@@ -12,8 +12,7 @@ export class InterventionPage implements OnInit {
 
     listeIntervention : any;
     modal : any;
-    apiIntervention = "http://localhost/apiGestionInterventions.php";
-
+    apiIntervention = "http://localhost/api/apiGestionInterventions.php";
     idIntervention : number;
     idAnimal : number;
     idTypeIntervention : number; 
@@ -23,6 +22,7 @@ export class InterventionPage implements OnInit {
   constructor(private httpClient: HttpClient, public InterventionsService:InterventionsService, private routeur:Router) { }
 
   ngOnInit() {
+    this.afficherListeInterventions();
   }
 
   afficherListeInterventions(){
