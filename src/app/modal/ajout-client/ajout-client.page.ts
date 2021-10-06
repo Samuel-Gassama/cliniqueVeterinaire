@@ -10,30 +10,33 @@ import { ModalController } from '@ionic/angular';
 export class AjoutClientPage implements OnInit {
 
     nouveauClient : Client;
-  constructor() { }
+    
+  constructor(private HttpClient: HttpClient, private modalController: ModalController) { }
 
   ngOnInit() {
   }
-//   async enregistrerNouveauClient(){
+  async enregistrerNouveauClient(){
     
-//     console.log(this.nouveauClient.nom);
-//     console.log(this.nouveauClient.prenom);
-//     console.log(this.nouveauClient.telephone);
+    console.log(this.nouveauClient.nom);
+    console.log(this.nouveauClient.prenom);
+    console.log(this.nouveauClient.telephone);
+    console.log(this.nouveauClient.geolocalisation);
 
-//     this.httpClient.get("http://localhost/apiAjoutClient.php?nom=" + this.nouveauClient.nom + "&prenom=" + this.nouveauClient.prenom + "&telephone=" + this.nouveauClient.telephone).subscribe
-//     (
-//       resultat => { 
-//         console.log('Client ajouté avec succès'); 
-//         this.annulerClient()      
-//       },
-//       erreur => {
-//         console.log('Erreur' + erreur);
-//       }
-//     );
-//   } 
-//   annulerClient() {
-//       // Fonction qui permet de fermer la page modale
-//       this.modalController.dismiss()
-//     } 
-// }
+
+    this.HttpClient.get("http://localhost/api/apiAjoutClient.php?nom=" + this.nouveauClient.nom + "&prenom=" + this.nouveauClient.prenom + "&telephone=" + this.nouveauClient.telephone).subscribe
+    (
+      resultat => { 
+        console.log('Un nouveau client à été ajouté'); 
+        this.annulerClient()      
+      },
+      erreur => {
+        console.log('Erreur' + erreur);
+      }
+    );
+  } 
+  annulerClient() {
+      // Fonction qui permet de fermer la page modale
+      this.modalController.dismiss()
+    } 
 }
+
