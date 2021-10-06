@@ -14,13 +14,15 @@ export class AjoutClientPage implements OnInit {
   constructor(private HttpClient: HttpClient, private modalController: ModalController) { }
 
   ngOnInit() {
+    this.nouveauClient = new Client(" "," "," ");
+
   }
   async enregistrerNouveauClient(){
     
     console.log(this.nouveauClient.nom);
     console.log(this.nouveauClient.prenom);
     console.log(this.nouveauClient.telephone);
-    console.log(this.nouveauClient.geolocalisation);
+    // console.log(this.nouveauClient.geolocalisation);
 
 
     this.HttpClient.get("http://localhost/api/apiAjoutClient.php?nom=" + this.nouveauClient.nom + "&prenom=" + this.nouveauClient.prenom + "&telephone=" + this.nouveauClient.telephone).subscribe
