@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ModalController } from '@ionic/angular';
 import { AjoutClientPage } from '../modal/ajout-client/ajout-client.page';
+import { Client } from '../model/client';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class HomePage implements OnInit {
   listeClients : any;
   modal : any;
   apiClient : string ="http://localhost/api/apiGestionClients.php"
+  endpoint: string;
 
   constructor( private httpClient: HttpClient, public ClientService:ClientService, private routeur:Router, private modalAjoutClient: ModalController) {
 
@@ -60,4 +62,5 @@ export class HomePage implements OnInit {
         this.afficherClient();
       })
     }
+
   }

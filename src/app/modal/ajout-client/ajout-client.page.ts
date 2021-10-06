@@ -22,21 +22,34 @@ export class AjoutClientPage implements OnInit {
     console.log(this.nouveauClient.nom);
     console.log(this.nouveauClient.prenom);
     console.log(this.nouveauClient.telephone);
-    // console.log(this.nouveauClient.geolocalisation);
 
 
-    this.HttpClient.get("http://localhost/api/apiAjoutClient.php?nom=" + this.nouveauClient.nom + "&prenom=" + this.nouveauClient.prenom + "&telephone=" + this.nouveauClient.telephone).subscribe
+    this.HttpClient.get("https://cors-anywhere.herokuapp.com/http://localhost/api/apiAjoutClient.php?nom=" + this.nouveauClient.nom + "&prenom=" + this.nouveauClient.prenom + "&telephone=" + this.nouveauClient.telephone).subscribe
     (
       resultat => { 
         console.log('Un nouveau client à été ajouté'); 
-        this.annulerClient()      
+        this.quitterAjoutClient()      
       },
       erreur => {
         console.log('Erreur' + erreur);
       }
     );
   } 
-  annulerClient() {
+
+  async supprimerClient(){
+    
+    this.HttpClient.delete("https://cors-anywhere.herokuapp.com/http://localhost/api/apiAjoutClient.php?nom=" + this.nouveauClient.nom + "&prenom=" + this.nouveauClient.prenom + "&telephone=" + this.nouveauClient.telephone).subscribe
+    (
+      resultat => { 
+        console.log('Un client à été supprimé '); 
+        this.quitterAjoutClient()      
+      },
+      erreur => {
+        console.log('Erreur' + erreur);
+      }
+    );
+  } 
+  quitterAjoutClient() {
       // Fonction qui permet de fermer la page modale
       this.modalController.dismiss()
     } 
