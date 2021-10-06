@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { InterventionsService } from 'src/app/service/interventions.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-intervention',
@@ -18,9 +20,25 @@ export class InterventionPage implements OnInit {
     dateIntervention : any;
     duree : any;
 
-  constructor(private HttpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, public InterventionsService:InterventionsService, private routeur:Router) { }
 
   ngOnInit() {
   }
 
+  afficherListeInterventions(){
+
+    this.httpClient.get(this.apiIntervention).subscribe(
+      resultat =>
+      {
+        
+        this.listeIntervention = resultat;
+        
+      },
+      erreur =>
+      {
+        console.log("Erreur"+erreur);
+      }
+    )
+  }
+  
 }

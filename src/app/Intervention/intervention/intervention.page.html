@@ -1,9 +1,27 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Intervention</ion-title>
+    <ion-title>
+      Liste des Interventions
+    </ion-title>
   </ion-toolbar>
+<ion-card>
+  <ion-list>
+    <ion-item *ngFor="let Interventions of listeInterventions">
+    <ion-item (click)="afficherClient(client.nom)"></ion-item>
+      <ion-row>
+          <ion-col>
+              <ion-label>{{client.nom}} {{client.prenom}} {{client.telephone}}</ion-label>
+          </ion-col>
+          <ion-button (click)="detailClient()">
+            Détails
+          </ion-button>
+      </ion-row>   
+  </ion-item>
+  <ion-list style="text-align:center">
+    <ion-button (click)="ajoutClient()">
+        Ajouter un nouveau client
+    </ion-button>
+  </ion-list> 
+  </ion-list>
+</ion-card>
 </ion-header>
-
-<ion-content>
-
-</ion-content>

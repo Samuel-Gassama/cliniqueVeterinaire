@@ -13,5 +13,42 @@ export class InterventionsService {
   idIntervention : number;
   idClient : number;
 
-  constructor() { }
+  constructor() { 
+
+    this.listeIntervention=new Array<Intervention>();
+  }
+
+  getIdIntervention(idIntervention){
+    this.idIntervention = idIntervention;
+  }
+  setIdIntervention(){
+    return this.idIntervention;
+  }
+
+  getIdAnimal(idAnimal){
+    this.idAnimal = idAnimal;
+  }
+  setIdAnimal(){
+    return this.idAnimal;
+  }
+
+  getDateIntervention(dateIntervention){
+    this.dateIntervention = dateIntervention;
+  }
+  setDateIntervention(){
+    return this.dateIntervention;
+  }
+
+  getIdClient(idClient){
+    this.idClient = idClient;
+  }
+  setIdClient(){
+    return this.idClient;
+  }
+  getidTypeIntervention(){
+    this.idTypeIntervention = this.idTypeIntervention;
+  }
+  setIdTypeIntervention(){
+    return this.idTypeIntervention;
+  }
 }
