@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Client } from 'src/app/model/client';
 import { HttpClient } from '@angular/common/http';
 import { ModalController } from '@ionic/angular';
+
 @Component({
   selector: 'app-ajout-client',
   templateUrl: './ajout-client.page.html',
@@ -40,5 +41,6 @@ export class AjoutClientPage implements OnInit {
       // Fonction qui permet de fermer la page modale
       this.modalController.dismiss()
     } 
+    
 }
 

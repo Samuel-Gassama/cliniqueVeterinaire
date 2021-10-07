@@ -15,7 +15,7 @@ export class HomePage implements OnInit {
 
   listeClients : any;
   modal : any;
-  apiClient : string ="http://localhost/api/apiGestionClient.php"
+  apiClient : string ="http://localhost/api/apiGestionClients.php"
 
   constructor( public httpClient: HttpClient, public ClientService:ClientService, private routeur:Router, private modalAjoutClient: ModalController) {
 

@@ -5,5 +5,13 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-button (click)="Home()">Retour à la liste</ion-button>
+  <ion-item *ngFor="let client of listeDetail">
+      <ion-card>
+      <ion-label>Nom : {{ client.nom }}</ion-label>
+      <ion-label>Prenom : {{ client.prenom }}</ion-label>
+      <ion-label>Telephone : {{ client.telephone }}</ion-label>
+      <ion-label>Localisation : {{ client.geolocalisation }}</ion-label>
+ </ion-card>
+</ion-item>
 </ion-content>
