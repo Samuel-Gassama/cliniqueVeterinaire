@@ -12,6 +12,7 @@ export class ClientService {
   prenom:string;
   telephone:string;
   id: number;
+  geolocalisation: string;
 
 
   constructor(private httpClient: HttpClient,HttpClientModule : HttpClientModule) { 
@@ -49,5 +50,10 @@ export class ClientService {
   setIdClient(id){
     this.id = id;
   }
-
+  getGeolocalisation(){
+    return this.geolocalisation;
+  }
+  setGeolocalisation(geolocalisation){
+    this.geolocalisation = geolocalisation;
+  }
 }

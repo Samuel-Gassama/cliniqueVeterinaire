@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ModalController } from '@ionic/angular';
 import { AjoutClientPage } from '../modal/ajout-client/ajout-client.page';
-import { Client } from '../model/client';
 
 
 @Component({
@@ -14,17 +13,11 @@ import { Client } from '../model/client';
 })
 export class HomePage implements OnInit {
 
-  @Input() public nom : string;
-  @Input() public prenom : string;
-  @Input() public telephone: string;
-  @Input() public geolocalisation: string;
-
   listeClients : any;
   modal : any;
-  apiClient : string ="http://localhost/api/apiGestionClients.php"
-  endpoint: string;
+  apiClient : string ="http://localhost/api/apiGestionClient.php"
 
-  constructor( private httpClient: HttpClient, public ClientService:ClientService, private routeur:Router, private modalAjoutClient: ModalController) {
+  constructor( public httpClient: HttpClient, public ClientService:ClientService, private routeur:Router, private modalAjoutClient: ModalController) {
 
               } 
 
@@ -51,10 +44,10 @@ export class HomePage implements OnInit {
       this.modal = await this.modalAjoutClient.create({
         component: AjoutClientPage,
         componentProps: {
-          'nom' : String,
-          'prenom' : String,
-          'telephone' : String,
-          'geolocalisation': String
+          //'nom' : String,
+          //'prenom' : String,
+          //'telephone' : String,
+          //'geolocalisation': String
         }
       });
       this.modal.present();
@@ -62,5 +55,4 @@ export class HomePage implements OnInit {
         this.afficherClient();
       })
     }
-
   }

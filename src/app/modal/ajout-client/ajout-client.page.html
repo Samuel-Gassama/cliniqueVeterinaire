@@ -20,6 +20,10 @@
         <ion-input type="text" [(ngModel)]="nouveauClient.telephone" ngDefaultControl></ion-input>
       </ion-item>
       <ion-item>
+        <ion-label>Géolocalisation :</ion-label>
+        <ion-input type="text" [(ngModel)]="nouveauClient.geolocalisation" ngDefaultControl></ion-input>
+      </ion-item>
+      <ion-item>
         <ion-button (click)='enregistrerNouveauClient()'>Enregistrer</ion-button>
         <ion-button (click)='quitterAjoutClient()'>Annuler</ion-button>
       </ion-item>
